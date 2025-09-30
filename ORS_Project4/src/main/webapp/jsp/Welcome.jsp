@@ -7,13 +7,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Welcome Page 1</title>
+<title>Welcome Page</title>
 </head>
 <body>
 	<form action="<%=ORSView.WELCOME_CTL%>">
 	<%@ include file="Header.jsp"%>
 		<h1 align="Center">
-			<font size="10px" color="red">Welcome to ORS </font>
+			<font size="10px" color="red">Welcome to ORS Anand</font>
 		</h1>
 
 		<%
