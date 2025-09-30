@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Welcome Page</title>
+<title>Welcome Page 1</title>
 </head>
 <body>
 	<form action="<%=ORSView.WELCOME_CTL%>">
