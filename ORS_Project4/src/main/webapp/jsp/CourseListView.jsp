@@ -14,7 +14,7 @@
 <html>
 <head>
 <link rel="icon" type="image/png" href="<%=ORSView.APP_CONTEXT%>/img/logo.png" sizes="16*16"/>
-<title> Course List 1</title>
+<title> Course List </title>
 
 <script src="<%=ORSView.APP_CONTEXT %>/js/jquery.min.js""></script>
 <script src="<%=ORSView.APP_CONTEXT %>/js/Checkbox11.js"></script>
