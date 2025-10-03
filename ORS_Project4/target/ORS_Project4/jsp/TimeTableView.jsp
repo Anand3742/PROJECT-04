@@ -1,4 +1,5 @@
 <%@page import="com.rays.pro4.controller.TimeTableCtl"%>
+<%@page import="com.rays.pro4.controller.TimeTableCtl"%>
 <%@page import="java.util.LinkedHashMap"%>
 <%@page import="com.rays.pro4.Util.HTMLUtility"%>
 <%@page import="com.rays.pro4.Bean.TimeTableBean"%>
@@ -19,27 +20,28 @@
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
   <script>
-  
-   function disableSunday(d){
-	  var day = d.getDay();
-	  if(day==0)
-	  {
-	   return [false];
-	  }else
-	  {
-		  return [true];
-	  }
-  } 
-  
-  $( function() {
-	    $( "#udatee" ).datepicker({
-	      changeMonth: true,
-	      changeYear: true,
-	      yearRange :'0:+2'
-		 /*  dateFormat:'dd-mm-yy' */
-	    });
-	  } );
-	  </script>
+  function disableSunday(d) {
+		var day = d.getDay();
+		if (day == 0) {
+			return [ false ];
+		} else {
+			return [ true ];
+		}
+	}
+
+	$(function() {
+		$("#udate5").datepicker({
+			changeMonth : true,
+			changeYear : true,
+			yearRange : '0:+2',
+			dateFormat : 'mm/dd/yy',
+
+			//Disable for Sunday
+			beforeShowDay : disableSunday,
+			// Disable for back date
+			minDate : 0
+		});
+	});	  </script>
 
 
 
@@ -64,7 +66,7 @@
 	<input type="hidden" name="modifiedby" value="<%=DataUtility.getTimestamp(bean.getModifiedDatetime())%>">
 	
 	<div align = "center">
-		<h1 >
+		<h1>
 			<% if(bean != null && bean.getId() >0 ){ %>
 			
 		<tr><th>Update TimeTable</th></tr>
@@ -118,7 +120,7 @@
  <tr><th style="padding: 3px"></th></tr>  
   
 	<tr><th align="left">Exam Date <span style="color: red">*</span> :</th>
-	<td> <input type="text" readonly="readonly" id="udatee" size="26" placeholder="Select Date" name="ExDate" value="<%=DataUtility.getDateString(bean.getExamDate()) %>">
+	<td> <input type="text" readonly="readonly" id="udate5" size="25" placeholder="Select Date" name="ExDate" value="<%=DataUtility.getDateString(bean.getExamDate()) %>">
 	<td style="position: fixed;"><font color="red"><%=ServletUtility.getErrorMessage("ExDate",request) %></font> 
 	</td></tr>
 	
